@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List Page</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+<div class="d-flex flex-column w-50 m-auto align-items-center">
+    <h3 class="text-info">Product List Page</h3>
+    <div class="container">
+        <div class="row border-bottom text-light"> <!-- naglowke-->
+            <div class = "col-2 font-weight-bold">Identification</div>
+            <div class = "col-3 font-weight-bold">Name</div>
+            <div class = "col-3 font-weight-bold">Expiration Date</div>
+            <div class = "col-2 font-weight-bold">Quantity</div>
+            <div class = "col-2 font-weight-bold">Unit</div>
+        </div>
+        <div class="row border-bottom text-light" th:each="product : ${attributeName}"> <!-- pętla wierszy obiektów w liście -->
+            <div class="col-2" th:text="${product.getId()}"></div>
+            <div class="col-3" th:text="${product.getName()}"></div>
+            <div class="col-3" th:text="${product.getExpDate()}"></div>
+            <div class="col-2" th:text="${product.getQuantity()}"></div>
+            <div class="col-2" th:text="${product.getUnit()}"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

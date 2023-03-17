@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Form Page</title>
+  <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+<div class="d-flex flex-column w-50 m-auto a align-items-center">
+  <h2 class="text-info">Product Form Page</h2>
+  <form class="container" th:object="${attributeObjectForm}" th:action="@{/view/product/form}" method="post">
+    <div class="form-group">
+      <label for="field-name">Product Name</label>
+      <input th:field="*{name}" type="text" class="form-control" id="field-name" aria-describedby="desc-name" placeholder="Product Name">
+      <small id="desc-name" class="form-text text-muted">Insert name</small>
+    </div>
+    <hr class="text-muted">
+    <div class="form-group">
+      <label for="field-exp-date">Expiration Date</label>
+      <input th:field="*{expDate}" type="date" class="form-control" id="field-exp-date" aria-describedby="desc-exp-date" placeholder="Expiration Date">
+      <small id="desc-exp-date" class="form-text text-muted">Insert expiration date</small>
+    </div>
+    <hr class="text-muted">
+    <div class="form-group">
+      <label for="field-quantity">Quantity</label>
+      <input th:field="*{quantity}" type="number" class="form-control" id="field-quantity" aria-describedby="desc-quantity" placeholder="Quantity">
+      <small id="desc-quantity" class="form-text text-muted">Insert quantity</small>
+    </div>
+    <hr class="text-muted">
+    <div class="form-group">
+      <label for="field-unit">Unit</label>
+      <input th:field="*{unit}" type="text" class="form-control" id="field-unit" aria-describedby="desc-unit" placeholder="Unit">
+      <small id="desc-unit" class="form-text text-muted">Insert unit</small>
+    </div>
+    <button class="btn btn-success form-control" type="submit">Submit</button>
+  </form>
+</div>
+<script src="webjars/jquery/3.6.3/jquery.min.js"></script>
+<script src="webjars/popper.js/1.16.1/dist/umd/popper.min.js"></script>
+<script src="webjars/bootstrap/5.2.3/js/bootstrap.min.js"></script>
+</body>
+</html>
